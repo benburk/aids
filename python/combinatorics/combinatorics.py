@@ -1,5 +1,5 @@
 import itertools
-from typing import Iterable, Iterator, Sequence
+from typing import Iterator
 
 
 def stars_and_bars(n_items: int, n_bins: int) -> Iterator[list[int]]:

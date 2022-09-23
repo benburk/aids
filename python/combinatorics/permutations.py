@@ -1,6 +1,4 @@
-"""
-Generate all permutations of n objects
-"""
+"""Generate all permutations of n objects."""
 
 
 from typing import Iterable

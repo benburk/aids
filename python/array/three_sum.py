@@ -29,11 +29,11 @@ def three_sum_closest(nums: list[int], target: int) -> int:
     """
     nums = sorted(nums)
     result = sum(nums[:3])  # initial sum
-    for i, _ in enumerate(nums):
+    for i, num in enumerate(nums):
         left = i + 1
         right = len(nums) - 1
         while left < right:
-            total = nums[i] + nums[left] + nums[right]
+            total = num + nums[left] + nums[right]
 
             if abs(total - target) < abs(result - target):
                 result = total
