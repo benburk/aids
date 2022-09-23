@@ -1,7 +1,7 @@
 """Different methods for finding duplicates in an array.
 
 """
-from typing import Iterable, MutableSequence, Optional, Sequence, TypeVar
+from typing import Iterable, MutableSequence, Optional, TypeVar
 
 import pytest
 
@@ -9,7 +9,7 @@ T = TypeVar("T")
 
 
 def solve_bounded(nums: MutableSequence[int]) -> Optional[int]:
-    """Find first duplicate element if elements are bounded.
+    """Finds the first duplicate element if elements are bounded.
 
     The idea is to use the sign of the element at a position as a flag.
     contraints: 1 <= element <= len(nums)
@@ -45,7 +45,7 @@ def solve_set(nums: Iterable[T]) -> Optional[T]:
 
 
 @pytest.mark.parametrize(
-    "test_input, expected", (([], None), ([0], None), ([1, 1], 1), ([2, 1, 3, 2, 3], 2))
+    "test_input, expected", (([], None), ([1], None), ([1, 1], 1), ([2, 1, 3, 2, 3], 2))
 )
 def test(test_input: list[int], expected: Optional[int]) -> None:
     """Run test cases.
@@ -53,5 +53,5 @@ def test(test_input: list[int], expected: Optional[int]) -> None:
     :param test_input: The input to the function.
     :param expected: The expected output.
     """
-    assert solve_bounded(test_input) == expected
     assert solve_set(test_input) == expected
+    assert solve_bounded(test_input) == expected

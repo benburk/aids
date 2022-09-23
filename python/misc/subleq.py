@@ -18,6 +18,7 @@ def my_leq(left_side: int, right_side: int) -> bool:
 
 # now we write all other functions in terms of the above two functions
 
+
 def my_add(augend: int, addend: int) -> int:
     return my_sub(augend, my_sub(0, addend))
 
@@ -96,6 +97,7 @@ def test(arg1: int, arg2: int) -> None:
     assert arg1 & arg2 == my_and(arg1, arg2)
     assert arg1 | arg2 == my_or(arg1, arg2)
     assert arg1 ^ arg2 == my_xor(arg1, arg2)
+
 
 for _ in range(1000):
     test(random.randint(0, 1024), random.randint(0, 1024))

@@ -1,11 +1,8 @@
 from collections import defaultdict
 
 
-
-
 def remove_islands(matrix: list[list[int]]):
     n_rows, n_cols = len(matrix), len(matrix[0])
-
 
     def find_component(i, j):
         """do a depth first search in grid at (i,j)"""
@@ -39,28 +36,19 @@ def remove_islands(matrix: list[list[int]]):
                 if not edged:
                     seen.update(component)
                     remove_us.extend(component)
-    
+
     print(remove_us)
 
 
 def main():
-    board = (
-        "100000\n"
-        "010111\n"
-        "001010\n"
-        "110010\n"
-        "101100\n"
-        "100001"
-    )
+    board = "100000\n" "010111\n" "001010\n" "110010\n" "101100\n" "100001"
 
     board = [[int(c) for c in row] for row in board.split("\n")]
     from pprint import pprint
+
     pprint(board)
     remove_islands(board)
 
+
 if __name__ == "__main__":
     main()
-
-
-    
-

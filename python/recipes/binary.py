@@ -10,4 +10,4 @@ def to_bin(value: int, n_bits: int = 8) -> str:
         to_bin(-2, 4) -> '1110'
     """
     assert -(2 ** (n_bits - 1)) <= value <= 2 ** (n_bits - 1) - 1
-    return "{:0>{}b}".format(value & 2 ** n_bits - 1, n_bits)
+    return "{:0>{}b}".format(value & 2**n_bits - 1, n_bits)

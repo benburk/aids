@@ -1,5 +1,4 @@
-"""
-Heaps are arrays for which a[k] <= a[2*k+1] and a[k] <= a[2*k+2] for
+"""Heaps are arrays for which a[k] <= a[2*k+1] and a[k] <= a[2*k+2] for
 all k, counting elements from 0. For the sake of comparison,
 non-existing elements are considered to be infinite. The interesting
 property of a heap is that a[0] is always its smallest element.

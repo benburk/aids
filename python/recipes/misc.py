@@ -52,5 +52,5 @@ def hanoi(n_discs: int) -> None:
 
     :param n_discs: The number of discs
     """
-    for i in range(1, 2 ** n_discs):
+    for i in range(1, 2**n_discs):
         print(f"move a disc from {(i & (i - 1)) % 3} to {((i | i - 1) + 1) % 3}")

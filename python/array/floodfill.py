@@ -1,5 +1,4 @@
 """Flood fill."""
-from pprint import pprint
 from typing import TypeVar
 
 T = TypeVar("T")
@@ -29,11 +28,7 @@ def floodfill(matrix: list[list[T]], i: int, j: int, before: T, after: T) -> Non
 
 
 def test() -> None:
-    """Run test cases.
-
-    :param test_input: The input to the function.
-    :param expected: The expected output.
-    """
+    """Runs test cases."""
     matrix = [
         [0, 2, 0, 2, 2, 2],
         [0, 0, 0, 0, 0, 0],
@@ -44,4 +39,4 @@ def test() -> None:
     ]
 
     floodfill(matrix, 4, 2, 0, 1)
-    pprint(matrix)
+    assert matrix[1][5] == 1

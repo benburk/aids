@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import BaseException, Optional, TracebackType, Type
 
 
@@ -7,21 +9,28 @@ class Foo:
 
     def __enter__(self) -> "Foo":
         return self
-    
-    def __exit__(self, exc_type: Optional[Type[BaseException]], exc_value: Optional[BaseException], traceback: Optional[TracebackType]) -> None:
+
+    def __exit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_value: Optional[BaseException],
+        traceback: Optional[TracebackType],
+    ) -> None:
         pass
+
 
 class SMTPConnection:
     def __init__(self) -> None:
         pass
 
-    async def __aenter__(self):
-        pass
+    async def __aenter__(self) -> SMTPConnection:
+        return self
 
     async def __aexit__(
         self,
-        exctype: Optional[Type[BaseException]],
-        excinst: Optional[BaseException],
-        exctb: Optional[TracebackType],
+        exc_type: Optional[Type[BaseException]],
+        exc_value: Optional[BaseException],
+        traceback: Optional[TracebackType],
     ) -> bool:
-        pass
+        """Returns True if the exception was handled, False otherwise."""
+        return False

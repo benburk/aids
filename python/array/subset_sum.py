@@ -1,5 +1,4 @@
-"""
-Given positive integers {x_1, ..., x_n}, is there a subset that sums to k
+"""Given positive integers {x_1, ..., x_n}, is there a subset that sums to k
 
 NP complete problem
 
@@ -11,22 +10,20 @@ Links:
     https://stackoverflow.com/a/41570549/9518712
 """
 from itertools import chain, combinations
-from typing import Iterable
 
 import pytest
 
 
-def subset_naive(arr: list[int], k: int) -> Iterable[tuple[int, ...]]:
+def subset_naive(arr: list[int], k: int) -> bool:
     """sum all subsets
     time: O(2^n)
     """
     powerset = chain.from_iterable(combinations(arr, i) for i in range(1, len(arr) + 1))
-    yield from (subset for subset in powerset if sum(subset) == k)
+    return any(sum(subset) == k for subset in powerset)
 
 
 def subset_pseudopoly(arr: list[int], k: int) -> bool:
-    """
-    Pseudo polynomial time using dynamic programming
+    """Pseudo polynomial time using dynamic programming
     Time complexity: O(nk)
     """
     possible = [False] * (k + 1)
@@ -64,21 +61,17 @@ def subset_pseudopoly(arr: list[int], k: int) -> bool:
 @pytest.mark.parametrize(
     "test_input, target, expected",
     (
-        ([], 1, tuple()),
+        ([], 1, False),
         ([1], 1, True),
         ([1, 2, 3, 1], 4, True),
         ([4, 2, 3, 4], 8, True),
-        ([2, 7, 9], 12, tuple()),
+        ([2, 7, 9], 12, False),
         ([267, 961, 1153, 1000, 1922, 493, 1598, 869, 1766, 1246], 5842, True),
     ),
 )
-def test(test_input: list[int], target: int, expected: list[tuple[int, ...]]) -> None:
-    """Run test cases.
-
-    :param test_input: The input to the function.
-    :param expected: The expected output.
-    """
+def test(test_input: list[int], target: int, expected: bool) -> None:
+    """Runs test cases."""
 
     assert subset_naive(test_input, target) == expected
-    # assert subset_pseudopoly(test_input, target) == expected
+    assert subset_pseudopoly(test_input, target) == expected
     # assert subset_approx(test_input, target) == expected

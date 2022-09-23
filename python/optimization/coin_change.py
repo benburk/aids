@@ -41,7 +41,7 @@ def count_coin_change_recur(S, m, n):
 
 def coinChange(self, coins, amount):
     coins.sort(reverse=True)
-    lenc, self.res = len(coins), 2 ** 31 - 1
+    lenc, self.res = len(coins), 2**31 - 1
 
     def dfs(pt, rem, count):
         if not rem:
@@ -52,7 +52,7 @@ def coinChange(self, coins, amount):
 
     for i in range(lenc):
         dfs(i, amount, 0)
-    return self.res if self.res < 2 ** 31 - 1 else -1
+    return self.res if self.res < 2**31 - 1 else -1
 
 
 def coin_change(coins: list, amount: int):

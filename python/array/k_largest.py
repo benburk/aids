@@ -1,5 +1,4 @@
-"""
-Given an array, return the k largest elements
+"""Returns the k largest elements in an array
 """
 import heapq
 

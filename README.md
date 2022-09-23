@@ -1,4 +1,4 @@
-# Recipes, algorithms, and data structures
+# Algorithms, Idioms, and Data Structures (AIDS)
 
 # C++
 ```shell

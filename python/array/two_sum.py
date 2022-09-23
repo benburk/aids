@@ -1,5 +1,4 @@
-"""
-Given an array of integers, return indices of the two numbers
+"""Given an array of integers, return indices of the two numbers
 such that they add up to a specific target.
 You may assume that each input would have exactly one solution,
 and you may not use the same element twice.
@@ -19,7 +18,7 @@ import pytest
 
 
 def two_sum_naive(arr: list[int], target: int) -> Optional[tuple[int, int]]:
-    """
+    """Naive two-sum.
     time: O(n^2)
     space: O(1)
     """
@@ -31,7 +30,7 @@ def two_sum_naive(arr: list[int], target: int) -> Optional[tuple[int, int]]:
 
 
 def two_sum_dict(arr: list[int], target: int) -> Optional[tuple[int, int]]:
-    """
+    """Two-sum using a dictionary.
     time: O(n)
     space: O(n)
     """

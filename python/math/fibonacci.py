@@ -58,7 +58,7 @@ def fibonacci_closed(n):
     space: O(1)
     """
     golden_ratio = (1 + math.sqrt(5)) / 2
-    return round(golden_ratio ** n / math.sqrt(5))
+    return round(golden_ratio**n / math.sqrt(5))
 
 
 def test():

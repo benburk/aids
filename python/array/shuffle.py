@@ -1,7 +1,4 @@
-"""
-Generate a random permutation of a finite sequence
-Shuffle an array
-"""
+"""Generate a random permutation of a finite sequence."""
 import random
 from typing import MutableSequence
 
@@ -12,20 +9,11 @@ def shuffle_std(arr: MutableSequence[int]) -> None:
 
 
 def shuffle_fy(arr: MutableSequence[int]) -> MutableSequence[int]:
-    """
-    Fisher-Yates shuffle
-    generates a random permutation of a finite sequence
-    in-place
+    """Shuffles an array in-place using Fisher-Yates algorithm.
 
-    Time: O(n)
     Space: O(1)
     Links:
         https://en.wikipedia.org/wiki/Fisher–Yates_shuffle
-
-    Args:
-        seq (sequence): sequence to be shuffled
-    Returns:
-        (sequence): shuffled list
     """
     for i, elem in enumerate(arr):
         rand_idx = random.randrange(i, len(arr))

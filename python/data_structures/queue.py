@@ -1,5 +1,4 @@
-"""
-Queue implementation
+"""Queue implementation
 
 Links:
     https://docs.python.org/3/library/collections.html#deque-objects

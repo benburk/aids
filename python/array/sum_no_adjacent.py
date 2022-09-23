@@ -1,5 +1,4 @@
-"""
-Given a list on non-negative integers, find the max sum without using adjacent
+"""Given a list on non-negative integers, find the max sum without using adjacent
 numbers.
 
 Found in:

@@ -9,22 +9,17 @@ from typing import Iterator, Sequence
 import pytest
 
 
-def three_sum_naive(
-    arr: Sequence[int], target: int = 0
-) -> Iterator[tuple[int, int, int]]:
+def three_sum_naive(arr: Sequence[int], target: int) -> bool:
     """Return triples of indices that sum to target.
     time: O(n^3)
     space: O(1)
-
-    :param arr: array of ints
-    :param target: target sum
-    :return: iterator of tuples of indices
     """
     for i in range(len(arr) - 2):
         for j in range(i + 1, len(arr) - 1):
             for k in range(j + 1, len(arr)):
                 if arr[i] + arr[j] + arr[k] == target:
-                    yield i, j, k
+                    return True
+    return False
 
 
 def three_sum_closest(nums: list[int], target: int) -> int:
@@ -99,16 +94,12 @@ def three_sum_fast(arr: list[int]) -> Iterator[tuple[int, int, int]]:
 
 @pytest.mark.parametrize(
     "array, target, expected",
-    (
-        ([], 0, []),
-        ([0, 0, 0], 0, [0, 0, 0]),
-        ([-1, 0, 1, 2, -1, -4], 0, [(-1, 0, 1), (-1, -1, 2)]),
-    ),
+    (([], 0, False), ([0, 0, 0], 0, True), ([-1, 0, 1, 2, -1, -4], 0, True)),
 )
-def test(array: list[int], target: int, expected: list[tuple[int, int, int]]) -> None:
+def test(array: list[int], target: int, expected: bool) -> None:
     """run test cases
     Test cases just use 0 as target
     """
-    # assert len(three_sum(test_input)) == expected
+    # assert len(three_sum(array)) == expected
     # assert len(three_sum_fast(test_input)) == expected
-    assert list(three_sum_naive(array, target)) == expected
+    assert three_sum_naive(array, target) == expected
