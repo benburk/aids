@@ -1,6 +1,3 @@
-# Algorithms, Idioms, and Data Structures (AIDS)
+# Programming AIDS
 
-# C++
-```shell
-clang++ -std=c++20 file.cpp
-```
+Algorithms, Idioms, and Data Structures implemented in various languages.
