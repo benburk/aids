@@ -8,7 +8,7 @@ doubles) at each step. However, there are some difficulties with the method.
 
 https://en.wikipedia.org/wiki/Newton's_method
 */
-#include <math.h>
+#include <cmath>       // sin, cos, fabs
 #include <functional>  // std::function
 #include <iomanip>     // std::setw
 #include <iostream>    // std::cout
