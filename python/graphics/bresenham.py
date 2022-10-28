@@ -1,10 +1,13 @@
 """
 Implementation of Bresenham's line drawing algorithm
-See en.wikipedia.org/wiki/Bresenham's_line_algorithm
+See https://en.wikipedia.org/wiki/Bresenham's_line_algorithm
 """
 
 
-def bresenham(x0, y0, x1, y1):
+from typing import Iterator
+
+
+def bresenham(x0: int, y0: int, x1: int, y1: int) -> Iterator[tuple[int, int]]:
     """Yield integer coordinates on the line from (x0, y0) to (x1, y1).
     Input coordinates should be integers.
     The result will contain both the start and the end point.
@@ -24,15 +27,15 @@ def bresenham(x0, y0, x1, y1):
         dx, dy = dy, dx
         xx, xy, yx, yy = 0, ysign, xsign, 0
 
-    D = 2 * dy - dx
+    err = 2 * dy - dx
     y = 0
 
     for x in range(dx + 1):
         yield x0 + x * xx + y * yx, y0 + x * xy + y * yy
-        if D >= 0:
+        if err >= 0:
             y += 1
-            D -= 2 * dx
-        D += 2 * dy
+            err -= 2 * dx
+        err += 2 * dy
 
 
 """

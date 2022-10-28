@@ -1,6 +1,7 @@
-mod misc;
 mod array;
 mod graph;
+mod idioms;
+mod misc;
 
 #[cfg(test)]
 mod tests {

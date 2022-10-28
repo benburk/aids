@@ -5,6 +5,7 @@ Links:
 - [datetime documentation](https://docs.python.org/3/library/datetime.html)
 - [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 - [guide](http://pytz.sourceforge.net/)  # for pytz only
+- https://blog.ganssle.io/articles/2019/11/utcnow.html
 """
 
 import zoneinfo
@@ -38,8 +39,8 @@ date = datetime(year=2002, month=10, day=27, hour=6, minute=0, second=0, microse
 date = date.replace(tzinfo=ZoneInfo("Asia/Tokyo"))
 
 
-datetime.fromtimestamp(datetime.now().timestamp())
-datetime.fromisoformat(datetime.now().isoformat())
+datetime.fromtimestamp(datetime.now().timestamp(), tz=timezone.utc)
+datetime.fromisoformat(datetime.now().isoformat(), tz=timezone.utc)
 
 
 def absolute_add(date: datetime, delta: timedelta) -> datetime:

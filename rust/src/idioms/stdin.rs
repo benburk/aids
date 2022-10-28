@@ -1,10 +1,12 @@
+use std::io::Write;
+
 /// Gets input string from user
 pub fn input(msg: &str) -> String {
-    let mut stdout = io::stdout().lock();
+    let mut stdout = std::io::stdout().lock();
     stdout.write_all(msg.as_bytes()).unwrap();
     stdout.flush().expect("error: unable to flush stdout");
     let mut buf = String::new();
-    io::stdin()
+    std::io::stdin()
         .read_line(&mut buf)
         .expect("error: unable to read user input");
 
