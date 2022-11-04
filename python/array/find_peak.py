@@ -10,7 +10,7 @@ import pytest
 
 
 def find_peak(nums: Sequence[int]) -> int:
-    """Find peak using modified binary search.
+    """Finds the peak element using a modified binary search.
 
     time: O(lg(n))
     space: O(1)

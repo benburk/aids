@@ -1,6 +1,4 @@
-"""Different methods for finding duplicates in an array.
-
-"""
+"""Different methods for finding duplicates in an array."""
 from typing import Iterable, MutableSequence, Optional, TypeVar
 
 import pytest
