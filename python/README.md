@@ -1,10 +1,3 @@
-[![code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
-[![License: MIT](https://black.readthedocs.io/en/stable/_static/license.svg)](LICENSE)
-
-# RADS Python
-
-Recipes, algorithms, and data structures in Python.
-
 ## See also
 
 - https://algs4.cs.princeton.edu/cheatsheet/

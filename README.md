@@ -1,3 +1,3 @@
-# Programming AIDS
+# aids
 
-Algorithms, Idioms, and Data Structures implemented in various languages.
+Algorithms, idioms, and data structures implemented in various languages.
