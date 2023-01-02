@@ -1,6 +1,7 @@
 import itertools
-import pytest
 from typing import Iterable, Sequence
+
+import pytest
 
 
 def powerset(arr: Sequence[int]) -> Iterable[tuple[int, ...]]:
@@ -14,11 +15,7 @@ def powerset(arr: Sequence[int]) -> Iterable[tuple[int, ...]]:
 
 @pytest.mark.parametrize(
     "test_input, expected",
-    (
-        ([], tuple()),
-        ([1], ((1,),)),
-        ([1, 2], ((1,), (2,), (1, 2))),
-    ),
+    (([], tuple()), ([1], ((1,),)), ([1, 2], ((1,), (2,), (1, 2)))),
 )
 def test(test_input: list[int], expected: int) -> None:
     """Run test cases.

@@ -1,7 +1,7 @@
 """Generate all permutations of n objects."""
-import pytest
-
 from typing import Iterable
+
+import pytest
 
 
 def permute2(arr: list[int], n: int) -> Iterable[list[int]]:
@@ -37,11 +37,7 @@ def permute(arr: list[int], n: int) -> Iterable[list[int]]:
 
 @pytest.mark.parametrize(
     "test_input, n, expected",
-    (
-        (([], 2, ([],))),
-        (([1], 2, ([1],))),
-        (([1, 2], 2, ([1, 2], [2, 1]))),
-    ),
+    ((([], 2, ([],))), (([1], 2, ([1],))), (([1, 2], 2, ([1, 2], [2, 1])))),
 )
 def test(test_input: list[int], n: int, expected: int) -> None:
     """Run test cases.

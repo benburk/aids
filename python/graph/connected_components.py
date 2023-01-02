@@ -1,17 +1,18 @@
-"""
-find all the connected components in a directed graph
-"""
+"""find all the connected components in a directed graph."""
+from typing import Iterator, TypeVar
+
+T = TypeVar("T")
 
 
-def connected(graph):
-    """return a list of lists of all connected components"""
+def connected(graph: dict[T, list[T]]) -> Iterator[list[T]]:
+    """Returns an iterator over lists of connected components."""
     seen = set()
 
-    def bfs(node):
+    def dfs(node):
         path = []
         stack = [node]
         while stack:
-            current = stack.pop(0)
+            current = stack.pop()
             if current not in seen:
                 seen.add(current)
                 path.append(current)
@@ -20,7 +21,7 @@ def connected(graph):
 
     for node in graph:
         if node not in seen:
-            yield bfs(node)
+            yield dfs(node)
 
 
 def test():

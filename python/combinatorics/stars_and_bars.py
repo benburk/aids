@@ -1,6 +1,8 @@
 import itertools
 from typing import Iterator
+
 import pytest
+
 
 def stars_and_bars(n_items: int, n_bins: int) -> Iterator[list[int]]:
     """Generate all permutations for putting n indistinguishable items into k
